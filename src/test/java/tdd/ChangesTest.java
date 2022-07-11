@@ -23,9 +23,14 @@ public class ChangesTest {
 
     @Test
     @DisplayName("1000원이 남아있다면 500원 2개로 돌려준다.")
-    void return_2_quantities_500_coin_when_remain_1000() {
+    void return2Quantities500CoinWhenRemain1000() {
+        // 준비
         Changes changes = new Changes(1000);
+
+        // 실행
         List<CoinSet> coinSet = changes.coin();
+
+        // 검증
         assertThat(coinSet).containsExactlyInAnyOrder(CoinSet._500_COIN, CoinSet._500_COIN);
     }
 

@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CoinSetTest {
 
@@ -40,6 +41,24 @@ class CoinSetTest {
                 Arguments.of(50, CoinSet._50_COIN),
                 Arguments.of(10, CoinSet._10_COIN)
         );
+    }
+
+    @Test
+    void exist_coin_500() {
+        CoinSet coin = CoinSet._500_COIN;
+        assertThat(coin.value).isEqualTo(500);
+    }
+
+    @Test
+    void exist_coin_100() {
+        CoinSet coin = CoinSet._100_COIN;
+        assertThat(coin.value).isEqualTo(100);
+    }
+
+    @Test
+    void exist_coin_50() {
+        CoinSet coin = CoinSet._50_COIN;
+        assertThat(coin.value).isEqualTo(50);
     }
 
     @Test
